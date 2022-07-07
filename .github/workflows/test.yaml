@@ -1,0 +1,15 @@
+name: If statements
+on:
+  release:
+    types: [created]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "PreRelease"
+        # if github release tag contains - then its a prerelease
+        if: ${{ contains(${GITHUB_REF:11}, '-') }}
+
+      - run: echo "Normal Release"
+        # if github release tag doesn't contains - then its a normal release
+        if: ${{ !contains(${GITHUB_REF:11}, '-') }}
