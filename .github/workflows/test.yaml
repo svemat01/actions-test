@@ -11,8 +11,8 @@ jobs:
 
       - run: echo "PreRelease"
         # if github release tag contains - then its a prerelease
-        if: ${{ contains(github.action_ref, '-') }}
+        if: ${{ contains(github.ref, '-') }}
 
       - run: echo "Normal Release"
         # if github release tag doesn't contains - then its a normal release
-        if: ${{ !contains(github.action_ref, '-') }}
+        if: ${{ !contains(github.ref, '-') }}
