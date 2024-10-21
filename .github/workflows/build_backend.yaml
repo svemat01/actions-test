@@ -5,9 +5,9 @@ on:
     branches:
       - master
       - staging
-    paths:
-      - "backend/**"
-      - ".github/workflows/build_backend.yaml"
+    # paths:
+    #   - "backend/**"
+    #   - ".github/workflows/build_backend.yaml"
 
 env:
   REGISTRY: ghcr.io
